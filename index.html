@@ -659,8 +659,9 @@ section { padding: 100px 0; position: relative; }
 
 /* ================= People (3D tilt) ================= */
 .people-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
   perspective: 1200px;
 }
@@ -674,6 +675,15 @@ section { padding: 100px 0; position: relative; }
   color: var(--text);
   transform-style: preserve-3d;
   will-change: transform;
+  width: 220px;
+  max-width: calc(50% - 12px);
+  box-sizing: border-box;
+}
+@media (max-width: 520px) {
+  .person-card {
+    width: 100%;
+    max-width: 280px;
+  }
 }
 .person-card:hover {
   box-shadow: var(--shadow-lg);
@@ -1128,7 +1138,7 @@ footer::before {
 
     <div class="people-grid">
       <a href="https://visitworld123.github.io/" target="_blank" rel="noopener" class="person-card tilt reveal">
-        <div class="avatar avatar-1"><img src="assets/zhiqin.png" alt="Zhiqin Yang"></div>
+        <div class="avatar avatar-1"><img src="assets/zhiqin.jpg" alt="Zhiqin Yang"></div>
         <div class="person-name">Zhiqin Yang</div>
         <div class="person-affil">Hong Kong University of Science and Technology</div>
       </a>
@@ -1155,7 +1165,7 @@ footer::before {
       <a href="https://www.ms.k.u-tokyo.ac.jp/sugi/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d1">
         <div class="avatar avatar-2"><img src="assets/masashi.png" alt="Masashi Sugiyama"></div>
         <div class="person-name">Masashi Sugiyama</div>
-        <div class="person-affil">RIKEN AIP & University of Tokyo</div>
+        <div class="person-affil">RIKEN AIP · University of Tokyo</div>
       </a>
       <a href="https://jwfu99.github.io/homepage/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d2">
         <div class="avatar avatar-7"><img src="assets/jingwenfu.jpg" alt="Jingwen Fu"></div>
