@@ -872,53 +872,6 @@ footer::before {
     <p class="section-lead reveal reveal-d1">
       The scaling paradigm is approaching its limits on reasoning-intensive tasks, and agentic and scientific applications increasingly push models into domains where free-form natural language is demonstrably inadequate. This workshop treats the linguistic and symbolic medium through which foundation models perceive, reason, and act as a first-class design axis, on par with architecture and scale.
     </p>
-
-    <div class="tabs reveal reveal-d2" id="overviewTabs">
-      <div class="tab-list" role="tablist">
-        <button class="tab-btn active" data-tab="ov1" role="tab">Language as Design Axis</button>
-        <button class="tab-btn" data-tab="ov2" role="tab">Linguistics Meets NeurIPS</button>
-        <button class="tab-btn" data-tab="ov3" role="tab">Beyond Scale</button>
-      </div>
-
-      <div class="tab-panel active" id="ov1">
-        <div class="tab-content">
-          <h3>Language as Design Axis</h3>
-          <p>Structured, symbolic, and formal representations that shape model schemas and improve reasoning, planning, and tool use, not as engineering afterthoughts but as first-class design decisions.</p>
-          <div class="tab-chips">
-            <span class="tab-chip">Representation design</span>
-            <span class="tab-chip">Formal grammars</span>
-            <span class="tab-chip">Tokenization</span>
-            <span class="tab-chip">Symbolic media</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-panel" id="ov2">
-        <div class="tab-content">
-          <h3>Linguistics Meets NeurIPS</h3>
-          <p>Bringing together machine learning researchers with computational and theoretical linguists, cognitive scientists, and neuroscientists, communities that rarely share the same venue at NeurIPS scale.</p>
-          <div class="tab-chips">
-            <span class="tab-chip">Compositionality</span>
-            <span class="tab-chip">Psycholinguistics</span>
-            <span class="tab-chip">Typology</span>
-            <span class="tab-chip">Interpretability</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-panel" id="ov3">
-        <div class="tab-content">
-          <h3>Beyond Scale</h3>
-          <p>Capability unlocked not only by adding parameters but by rethinking the medium of thought itself: code, math, formal logic, and AI-constructed notations as reasoning media for agents and scientific applications.</p>
-          <div class="tab-chips">
-            <span class="tab-chip">Reasoning</span>
-            <span class="tab-chip">Agent languages</span>
-            <span class="tab-chip">Formal notations</span>
-            <span class="tab-chip">World models</span>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1165,7 +1118,7 @@ footer::before {
       <a href="https://www.ms.k.u-tokyo.ac.jp/sugi/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d1">
         <div class="avatar avatar-2"><img src="assets/masashi.png" alt="Masashi Sugiyama"></div>
         <div class="person-name">Masashi Sugiyama</div>
-        <div class="person-affil">RIKEN AIP & University of Tokyo</div>
+        <div class="person-affil">RIKEN AIP · University of Tokyo</div>
       </a>
       <a href="https://jwfu99.github.io/homepage/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d2">
         <div class="avatar avatar-7"><img src="assets/jingwenfu.jpg" alt="Jingwen Fu"></div>
@@ -1264,7 +1217,6 @@ footer::before {
       document.getElementById(btn.dataset[dataKey]).classList.add('active');
     }));
   }
-  wireTabs('#overviewTabs', '.tab-btn', 'tab');
 
   /* ---------- Scroll reveal ---------- */
   const io = new IntersectionObserver(entries => {
