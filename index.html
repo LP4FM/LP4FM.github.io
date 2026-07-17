@@ -730,7 +730,17 @@ section { padding: 100px 0; position: relative; }
   letter-spacing: 0.06em;
 }
 
-/* Speakers layout: top 4 centered, bottom 5 centered */
+.section-subtitle {
+  text-align: center;
+  margin-top: 48px;
+  margin-bottom: 28px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--brand);
+  letter-spacing: 0.02em;
+}
+
+/* Speakers layout: 4 + 4 */
 .speakers-grid {
   display: flex;
   flex-direction: column;
@@ -748,18 +758,10 @@ section { padding: 100px 0; position: relative; }
     flex-wrap: nowrap;
     justify-content: center;
   }
-  .speakers-row-top .person-card {
+  .speakers-row .person-card {
     width: 220px;
     max-width: none;
     flex: 0 0 220px;
-  }
-  .speakers-row-bottom {
-    gap: 20px;
-  }
-  .speakers-row-bottom .person-card {
-    width: 210px;
-    max-width: none;
-    flex: 0 0 210px;
   }
 }
 @media (min-width: 521px) and (max-width: 1023px) {
@@ -1087,17 +1089,12 @@ footer::before {
 <!-- SPEAKERS -->
 <section id="speakers">
   <div class="container">
-    <h2 class="section-title reveal">Invited Speakers &amp; Advisory Panel</h2>
+    <h2 class="section-title reveal">Invited Speakers</h2>
     <div class="section-underline reveal"></div>
     <p class="section-lead reveal reveal-d1">We are excited to welcome leading researchers from linguistics, cognitive science, natural language processing, and machine learning.</p>
 
     <div class="people-grid speakers-grid">
       <div class="speakers-row speakers-row-top">
-        <a href="https://hkust.edu.hk/about/leadership/professor-yike-guo-bsc-phd" target="_blank" rel="noopener" class="person-card tilt reveal">
-          <div class="avatar avatar-9"><img src="assets/yikeguo.jpg" alt="Yike Guo"></div>
-          <div class="person-name">Yike Guo</div>
-          <div class="person-affil">The Hong Kong University of Science and Technology</div>
-        </a>
         <a href="https://www.mit.edu/~rplevy/" target="_blank" rel="noopener" class="person-card tilt reveal">
           <div class="avatar avatar-1"><img src="assets/levy.jpg" alt="Roger Levy"></div>
           <div class="person-name">Roger Levy</div>
@@ -1113,13 +1110,13 @@ footer::before {
           <div class="person-name">Gholamreza Haffari</div>
           <div class="person-affil">Monash University & OpenStream AI</div>
         </a>
+        <a href="https://bigaidream.github.io/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d3">
+          <div class="avatar avatar-8"><img src="assets/jiefu.jpeg" alt="Jie Fu"></div>
+          <div class="person-name">Jie Fu</div>
+          <div class="person-affil">IQuest Research</div>
+        </a>
       </div>
       <div class="speakers-row speakers-row-bottom">
-        <a href="https://jeyhan.my/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d3">
-          <div class="avatar avatar-4"><img src="assets/lau.jpg" alt="Jey Han Lau"></div>
-          <div class="person-name">Jey Han Lau</div>
-          <div class="person-affil">University of Melbourne</div>
-        </a>
         <a href="https://tallinzen.net/" target="_blank" rel="noopener" class="person-card tilt reveal">
           <div class="avatar avatar-5"><img src="assets/linzen.png" alt="Tal Linzen"></div>
           <div class="person-name">Tal Linzen</div>
@@ -1135,12 +1132,21 @@ footer::before {
           <div class="person-name">David Ifeoluwa Adelani</div>
           <div class="person-affil">McGill University & Mila</div>
         </a>
-        <a href="https://bigaidream.github.io/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d3">
-          <div class="avatar avatar-8"><img src="assets/jiefu.jpeg" alt="Jie Fu"></div>
-          <div class="person-name">Jie Fu</div>
-          <div class="person-affil">IQuest Research</div>
+        <a href="https://jeyhan.my/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d3">
+          <div class="avatar avatar-4"><img src="assets/lau.jpg" alt="Jey Han Lau"></div>
+          <div class="person-name">Jey Han Lau</div>
+          <div class="person-affil">University of Melbourne</div>
         </a>
       </div>
+    </div>
+
+    <h3 class="section-subtitle reveal">Advisory Panel</h3>
+    <div class="people-grid">
+      <a href="https://hkust.edu.hk/about/leadership/professor-yike-guo-bsc-phd" target="_blank" rel="noopener" class="person-card tilt reveal">
+        <div class="avatar avatar-9"><img src="assets/yikeguo.jpg" alt="Yike Guo"></div>
+        <div class="person-name">Yike Guo</div>
+        <div class="person-affil">The Hong Kong University of Science and Technology</div>
+      </a>
     </div>
   </div>
 </section>
