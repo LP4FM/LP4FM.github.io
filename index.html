@@ -714,6 +714,7 @@ section { padding: 100px 0; position: relative; }
 .avatar-6 { background: linear-gradient(135deg, #5FAB99, #5A5AC8); }
 .avatar-7 { background: linear-gradient(135deg, #3E5CC8, #7A4AC8); }
 .avatar-8 { background: linear-gradient(135deg, #4AB89E, #6A3AB8); }
+.avatar-9 { background: linear-gradient(135deg, #FF6A00, #6A3AB8); }
 .person-name { font-size: 1rem; font-weight: 600; margin-bottom: 4px; line-height: 1.3; transform: translateZ(16px); }
 .person-affil { font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; }
 .person-badge {
@@ -727,6 +728,58 @@ section { padding: 100px 0; position: relative; }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+}
+
+/* Speakers layout: top 4 centered, bottom 5 centered */
+.speakers-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  perspective: 1200px;
+}
+.speakers-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+@media (min-width: 1024px) {
+  .speakers-row {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  .speakers-row-top .person-card {
+    width: 220px;
+    max-width: none;
+    flex: 0 0 220px;
+  }
+  .speakers-row-bottom {
+    gap: 20px;
+  }
+  .speakers-row-bottom .person-card {
+    width: 210px;
+    max-width: none;
+    flex: 0 0 210px;
+  }
+}
+@media (min-width: 521px) and (max-width: 1023px) {
+  .speakers-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+    gap: 20px;
+  }
+  .speakers-row .person-card {
+    width: 100%;
+    max-width: 240px;
+  }
+}
+@media (max-width: 520px) {
+  .speakers-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 }
 
 /* ================= Schedule placeholder ================= */
@@ -1034,51 +1087,60 @@ footer::before {
 <!-- SPEAKERS -->
 <section id="speakers">
   <div class="container">
-    <h2 class="section-title reveal">Invited Speakers</h2>
+    <h2 class="section-title reveal">Invited Speakers &amp; Advisory Panel</h2>
     <div class="section-underline reveal"></div>
     <p class="section-lead reveal reveal-d1">We are excited to welcome leading researchers from linguistics, cognitive science, natural language processing, and machine learning.</p>
 
-    <div class="people-grid">
-      <a href="https://www.mit.edu/~rplevy/" target="_blank" rel="noopener" class="person-card tilt reveal">
-        <div class="avatar avatar-1"><img src="assets/levy.jpg" alt="Roger Levy"></div>
-        <div class="person-name">Roger Levy</div>
-        <div class="person-affil">Massachusetts Institute of Technology</div>
-      </a>
-      <a href="https://homepages.inf.ed.ac.uk/mlap/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d1">
-        <div class="avatar avatar-2"><img src="assets/lapata.jpeg" alt="Mirella Lapata"></div>
-        <div class="person-name">Mirella Lapata</div>
-        <div class="person-affil">University of Edinburgh</div>
-      </a>
-      <a href="https://rezahaffari.github.io/HomePage/HomePage.html" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d2">
-        <div class="avatar avatar-3"><img src="assets/haffari.jpg" alt="Gholamreza Haffari"></div>
-        <div class="person-name">Gholamreza Haffari</div>
-        <div class="person-affil">Monash University & OpenStream AI</div>
-      </a>
-      <a href="https://jeyhan.my/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d3">
-        <div class="avatar avatar-4"><img src="assets/lau.jpg" alt="Jey Han Lau"></div>
-        <div class="person-name">Jey Han Lau</div>
-        <div class="person-affil">University of Melbourne</div>
-      </a>
-      <a href="https://tallinzen.net/" target="_blank" rel="noopener" class="person-card tilt reveal">
-        <div class="avatar avatar-5"><img src="assets/linzen.png" alt="Tal Linzen"></div>
-        <div class="person-name">Tal Linzen</div>
-        <div class="person-affil">New York University & Google Research</div>
-      </a>
-      <a href="https://nouhadziri.github.io/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d1">
-        <div class="avatar avatar-6"><img src="assets/dziri.jpg" alt="Nouha Dziri"></div>
-        <div class="person-name">Nouha Dziri</div>
-        <div class="person-affil">Cohere Labs</div>
-      </a>
-      <a href="https://dadelani.github.io/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d2">
-        <div class="avatar avatar-7"><img src="assets/david-adelani.png" alt="David Ifeoluwa Adelani"></div>
-        <div class="person-name">David Ifeoluwa Adelani</div>
-        <div class="person-affil">McGill University & Mila</div>
-      </a>
-      <a href="https://bigaidream.github.io/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d3">
-        <div class="avatar avatar-8"><img src="assets/jiefu.jpeg" alt="Jie Fu"></div>
-        <div class="person-name">Jie Fu</div>
-        <div class="person-affil">IQuest Research</div>
-      </a>
+    <div class="people-grid speakers-grid">
+      <div class="speakers-row speakers-row-top">
+        <a href="https://hkust.edu.hk/about/leadership/professor-yike-guo-bsc-phd" target="_blank" rel="noopener" class="person-card tilt reveal">
+          <div class="avatar avatar-9"><img src="assets/yikeguo.jpg" alt="Yike Guo"></div>
+          <div class="person-name">Yike Guo</div>
+          <div class="person-affil">The Hong Kong University of Science and Technology</div>
+        </a>
+        <a href="https://www.mit.edu/~rplevy/" target="_blank" rel="noopener" class="person-card tilt reveal">
+          <div class="avatar avatar-1"><img src="assets/levy.jpg" alt="Roger Levy"></div>
+          <div class="person-name">Roger Levy</div>
+          <div class="person-affil">Massachusetts Institute of Technology</div>
+        </a>
+        <a href="https://homepages.inf.ed.ac.uk/mlap/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d1">
+          <div class="avatar avatar-2"><img src="assets/lapata.jpeg" alt="Mirella Lapata"></div>
+          <div class="person-name">Mirella Lapata</div>
+          <div class="person-affil">University of Edinburgh</div>
+        </a>
+        <a href="https://rezahaffari.github.io/HomePage/HomePage.html" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d2">
+          <div class="avatar avatar-3"><img src="assets/haffari.jpg" alt="Gholamreza Haffari"></div>
+          <div class="person-name">Gholamreza Haffari</div>
+          <div class="person-affil">Monash University & OpenStream AI</div>
+        </a>
+      </div>
+      <div class="speakers-row speakers-row-bottom">
+        <a href="https://jeyhan.my/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d3">
+          <div class="avatar avatar-4"><img src="assets/lau.jpg" alt="Jey Han Lau"></div>
+          <div class="person-name">Jey Han Lau</div>
+          <div class="person-affil">University of Melbourne</div>
+        </a>
+        <a href="https://tallinzen.net/" target="_blank" rel="noopener" class="person-card tilt reveal">
+          <div class="avatar avatar-5"><img src="assets/linzen.png" alt="Tal Linzen"></div>
+          <div class="person-name">Tal Linzen</div>
+          <div class="person-affil">New York University & Google Research</div>
+        </a>
+        <a href="https://nouhadziri.github.io/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d1">
+          <div class="avatar avatar-6"><img src="assets/dziri.jpg" alt="Nouha Dziri"></div>
+          <div class="person-name">Nouha Dziri</div>
+          <div class="person-affil">Cohere Labs</div>
+        </a>
+        <a href="https://dadelani.github.io/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d2">
+          <div class="avatar avatar-7"><img src="assets/david-adelani.png" alt="David Ifeoluwa Adelani"></div>
+          <div class="person-name">David Ifeoluwa Adelani</div>
+          <div class="person-affil">McGill University & Mila</div>
+        </a>
+        <a href="https://bigaidream.github.io/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d3">
+          <div class="avatar avatar-8"><img src="assets/jiefu.jpeg" alt="Jie Fu"></div>
+          <div class="person-name">Jie Fu</div>
+          <div class="person-affil">IQuest Research</div>
+        </a>
+      </div>
     </div>
   </div>
 </section>
