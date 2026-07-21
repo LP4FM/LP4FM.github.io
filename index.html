@@ -334,6 +334,8 @@ img { max-width: 100%; display: block; }
 
 /* ================= Sections ================= */
 section { padding: 100px 0; position: relative; }
+#contact { padding-bottom: 40px; }
+#references { padding-top: 40px; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .section-title {
   text-align: center;
@@ -530,25 +532,29 @@ section { padding: 100px 0; position: relative; }
   content: '';
   position: absolute;
   left: 8px;
-  top: 12px; bottom: 12px;
+  top: 18px; bottom: 18px;
   width: 2px;
   background: linear-gradient(180deg, var(--teal), var(--blue) 55%, var(--purple));
   border-radius: 2px;
 }
+.info-card .timeline li,
 .timeline li {
   position: relative;
   display: grid;
   grid-template-columns: 132px 1fr;
   column-gap: 14px;
   align-items: baseline;
-  padding: 0 0 22px 34px;
+  gap: 0;
+  padding: 16px 0 16px 34px;
 }
-.timeline li:last-child { padding-bottom: 0; }
+.info-card .timeline li:last-child,
+.timeline li:last-child { padding-bottom: 8px; border-bottom: 0; }
 .timeline li::before {
   content: '';
   position: absolute;
-  left: 0; top: 3px;
+  left: 0; top: 16px;
   width: 18px; height: 18px;
+  box-sizing: border-box;
   border-radius: 50%;
   background: white;
   border: 3px solid var(--blue);
@@ -795,6 +801,51 @@ section { padding: 100px 0; position: relative; }
   font-size: 1.05rem;
 }
 
+/* ================= Citations / References ================= */
+.cite {
+  font-size: 0.78em;
+  font-weight: 600;
+  vertical-align: super;
+  line-height: 0;
+  white-space: nowrap;
+}
+.cite a {
+  color: var(--brand);
+  text-decoration: none;
+  padding: 0 1px;
+  border-radius: 3px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.cite a:hover {
+  color: var(--blue-deep);
+  background: var(--brand-tint);
+}
+.ref-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.ref-list li {
+  display: grid;
+  grid-template-columns: 2.4em 1fr;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  scroll-margin-top: calc(var(--nav-h) + 12px);
+}
+.ref-list .ref-num {
+  font-weight: 700;
+  color: var(--brand);
+  text-decoration: none;
+}
+.ref-list .ref-num:hover { color: var(--blue-deep); text-decoration: underline; text-underline-offset: 3px; }
+.ref-list .ref-text { color: var(--text-muted); }
+.ref-list .ref-title { font-style: italic; color: var(--text); }
+
 /* ================= Contact / FAQ ================= */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 @media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; } }
@@ -857,6 +908,34 @@ footer::before {
   display: inline-block;
 }
 .foot-meta { font-size: 0.88rem; margin-bottom: 20px; color: rgba(255,255,255,0.85); }
+.foot-stats {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin: 4px 0 0;
+  font-variant-numeric: tabular-nums;
+}
+.foot-stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  letter-spacing: 0.06em;
+}
+.foot-stat-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.42);
+  text-transform: uppercase;
+}
+.foot-stat-value {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--teal-light);
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  letter-spacing: 0.02em;
+}
 .foot-copy {
   font-size: 0.82rem;
   opacity: 0.55;
@@ -925,7 +1004,7 @@ footer::before {
     <div class="section-underline reveal"></div>
     <p class="announce reveal">📢 We are actively recruiting <strong>reviewers</strong> and <strong>sponsors</strong> — if you are interested, please reach out at <a href="mailto:yangzqccc@gmail.com">yangzqccc@gmail.com</a>.</p>
     <p class="section-lead reveal reveal-d1">
-      The scaling paradigm is approaching its limits on reasoning-intensive tasks, and agentic and scientific applications increasingly push models into domains where free-form natural language is demonstrably inadequate. This workshop treats the linguistic and symbolic medium through which foundation models perceive, reason, and act as a first-class design axis, on par with architecture and scale.
+      The scaling paradigm is approaching its limits on reasoning-intensive tasks<span class="cite" id="cite-1"><a href="#ref-1">[1]</a></span>, and agentic and scientific applications increasingly push models into domains where free-form natural language is demonstrably inadequate<span class="cite" id="cite-2"><a href="#ref-2">[2]</a></span>. This workshop treats the linguistic<span class="cite" id="cite-3"><a href="#ref-3">[3]</a></span><span class="cite" id="cite-4"><a href="#ref-4">[4]</a></span> and symbolic<span class="cite" id="cite-5"><a href="#ref-5">[5]</a></span> medium through which foundation models perceive, reason, and act as a first-class design axis, on par with architecture and scale.
     </p>
   </div>
 </section>
@@ -1240,12 +1319,54 @@ footer::before {
   </div>
 </section>
 
+<!-- REFERENCES -->
+<section id="references" class="section-soft">
+  <div class="container">
+    <h2 class="section-title reveal">References</h2>
+    <div class="section-underline reveal"></div>
+    <ol class="ref-list reveal reveal-d1">
+      <li id="ref-1">
+        <a class="ref-num" href="#cite-1">[1]</a>
+        <span class="ref-text">Zhiqin Yang, Yuhan Liu, Jingwen Fu, Pei Fu, Bo Han, Masashi Sugiyama, and Nanning Zheng. <span class="ref-title">Shaping schema via language representation as the next frontier for LLM intelligence expanding</span>. arXiv preprint arXiv:2605.09271, 2026.</span>
+      </li>
+      <li id="ref-2">
+        <a class="ref-num" href="#cite-2">[2]</a>
+        <span class="ref-text">Brenden M. Lake, Tomer D. Ullman, Joshua B. Tenenbaum, and Samuel J. Gershman. <span class="ref-title">Building machines that learn and think like people</span>. Behavioral and Brain Sciences, 40:e253, 2017.</span>
+      </li>
+      <li id="ref-3">
+        <a class="ref-num" href="#cite-3">[3]</a>
+        <span class="ref-text">Chenxi Wang, Yixuan Zhang, Lang Gao, Zixiang Xu, Zirui Song, Yanbo Wang, and Xiuying Chen. <span class="ref-title">Under the shadow of Babel: How language shapes reasoning in LLMs</span>. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 24327–24344, 2025.</span>
+      </li>
+      <li id="ref-4">
+        <a class="ref-num" href="#cite-4">[4]</a>
+        <span class="ref-text">Zixiang Xu, Yanbo Wang, Yue Huang, Xiuying Chen, Jieyu Zhao, Meng Jiang, and Xiangliang Zhang. <span class="ref-title">Cross-lingual pitfalls: Automatic probing cross-lingual weakness of multilingual large language models</span>. In Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 8254–8284, 2025.</span>
+      </li>
+      <li id="ref-5">
+        <a class="ref-num" href="#cite-5">[5]</a>
+        <span class="ref-text">Bailin Wang, Zi Wang, Xuezhi Wang, Yuan Cao, Rif A. Saurous, and Yoon Kim. <span class="ref-title">Grammar prompting for domain-specific language generation with large language models</span>. Advances in Neural Information Processing Systems, 36:65030–65055, 2023.</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="foot-brand-line grad-text">LP4FM Workshop</div>
   <div class="foot-meta">NeurIPS 2026 · Sydney, Australia · Dec 11 or 12, 2026</div>
+  <div class="foot-stats">
+    <div class="foot-stat" id="busuanzi_container_site_pv">
+      <span class="foot-stat-label">Visits</span>
+      <span class="foot-stat-value" id="busuanzi_value_site_pv">-</span>
+    </div>
+    <div class="foot-stat" id="busuanzi_container_site_uv">
+      <span class="foot-stat-label">Visitors</span>
+      <span class="foot-stat-value" id="busuanzi_value_site_uv">-</span>
+    </div>
+  </div>
   <div class="foot-copy">© 2026 Workshop on Linguistic Principles for Foundation Models. All rights reserved.</div>
 </footer>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <script>
 (function () {
