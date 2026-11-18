@@ -801,6 +801,91 @@ section { padding: 100px 0; position: relative; }
   font-size: 1.05rem;
 }
 
+/* ================= Schedule table ================= */
+.sched-wrap {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.sched-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.sched-table thead th {
+  text-align: left;
+  padding: 15px 22px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+.sched-table tbody td {
+  padding: 13px 22px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.sched-table tbody tr:last-child td { border-bottom: 0; }
+.sched-table tbody tr:hover td { background: var(--bg-soft); }
+.sched-time {
+  font-weight: 700;
+  color: var(--brand);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  width: 132px;
+}
+.sched-speaker {
+  font-weight: 600;
+  white-space: nowrap;
+  width: 186px;
+}
+.sched-topic { color: var(--text); }
+.sched-tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 9px;
+  border-radius: var(--radius-pill);
+  background: var(--brand-tint);
+  color: var(--brand);
+  font-size: 0.66rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  vertical-align: 2px;
+}
+.sched-group td {
+  background: var(--grad);
+  color: white;
+  font-weight: 600;
+  font-size: 0.86rem;
+  letter-spacing: 0.03em;
+  padding: 11px 22px;
+}
+.sched-break td {
+  background: var(--bg-soft);
+  color: var(--text-muted);
+  font-style: italic;
+}
+.sched-foot {
+  margin-top: 22px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.sched-foot a { font-weight: 600; }
+@media (max-width: 760px) {
+  .sched-table thead { display: none; }
+  .sched-table, .sched-table tbody, .sched-table tr, .sched-table td { display: block; width: auto; }
+  .sched-table tr { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+  .sched-table tbody td { border: 0; padding: 2px 0; }
+  .sched-speaker { margin-top: 3px; }
+}
+
 /* ================= Citations / References ================= */
 .cite {
   font-size: 0.78em;
@@ -1161,8 +1246,158 @@ footer::before {
   <div class="container">
     <h2 class="section-title reveal">Schedule</h2>
     <div class="section-underline reveal"></div>
-    <p class="section-lead reveal reveal-d1">Full-day workshop at NeurIPS 2026, Sydney, Australia. Detailed schedule will be released after paper acceptance decisions.</p>
-    <div class="schedule-placeholder reveal reveal-d2">To be announced.</div>
+    <p class="section-lead reveal reveal-d1">
+      Saturday, 12 December 2026 &middot; International Convention Centre Sydney &middot; MR C3.3.<br>
+      All times are Sydney local time (AEDT, UTC+11). Oral presentations are 6 minutes each, including Q&amp;A.
+    </p>
+    <div class="sched-wrap reveal reveal-d2">
+      <table class="sched-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Speaker</th>
+            <th>Topic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sched-time">09:00&ndash;09:10</td>
+            <td class="sched-speaker">Organizers</td>
+            <td class="sched-topic">Opening Remarks</td>
+          </tr>
+          <tr>
+            <td class="sched-time">09:10&ndash;09:40</td>
+            <td class="sched-speaker">Wray Buntine</td>
+            <td class="sched-topic">Linguistic and Interpretative Capabilities of Foundation Models for Language</td>
+          </tr>
+          <tr>
+            <td class="sched-time">09:40&ndash;10:10</td>
+            <td class="sched-speaker">Cécile Paris</td>
+            <td class="sched-topic">Question Answering Fit for Purpose: A Perspective from Natural Language Processing and User Modeling</td>
+          </tr>
+          <tr>
+            <td class="sched-time">10:10&ndash;10:40</td>
+            <td class="sched-speaker">Eduard Hovy</td>
+            <td class="sched-topic">The Structure of Semantic Representation in Embedding Space</td>
+          </tr>
+          <tr class="sched-group">
+            <td colspan="3">Contributed Orals I &middot; 6 minutes each, including Q&amp;A</td>
+          </tr>
+          <tr>
+            <td class="sched-time">10:40&ndash;10:46</td>
+            <td class="sched-speaker">Emanuele Sansone</td>
+            <td class="sched-topic">Can AI Understand the Language of Origami?</td>
+          </tr>
+          <tr>
+            <td class="sched-time">10:46&ndash;10:52</td>
+            <td class="sched-speaker">Nicholas Runcie</td>
+            <td class="sched-topic">Talk Like a Molecular Graph: Chemical Representations for Large Language Models</td>
+          </tr>
+          <tr>
+            <td class="sched-time">10:52&ndash;10:58</td>
+            <td class="sched-speaker">Jindong Wang</td>
+            <td class="sched-topic">Beyond Structural Unification: A Perspective and Roadmap on Unified Multimodal Models</td>
+          </tr>
+          <tr>
+            <td class="sched-time">10:58&ndash;11:04</td>
+            <td class="sched-speaker">Kaibang Zhang</td>
+            <td class="sched-topic">Same Answer, Different Path: Measuring Prompt Sensitivity Beyond Task Outcomes in Small Language Models</td>
+          </tr>
+          <tr>
+            <td class="sched-time">11:04&ndash;11:10</td>
+            <td class="sched-speaker">Tim Tomov</td>
+            <td class="sched-topic">What Is a Clarification? Estimating Model-Dependent Input Ambiguity</td>
+          </tr>
+          <tr>
+            <td class="sched-time">11:10&ndash;11:16</td>
+            <td class="sched-speaker">Han Zhang</td>
+            <td class="sched-topic">Adaptive Content-Contrastive Decoding for Representation-Robust Tabular Reasoning</td>
+          </tr>
+          <tr class="sched-break">
+            <td class="sched-time">11:16&ndash;11:36</td>
+            <td class="sched-speaker">&mdash;</td>
+            <td class="sched-topic">Coffee Break</td>
+          </tr>
+          <tr class="sched-group">
+            <td colspan="3">Contributed Orals II &middot; 6 minutes each, including Q&amp;A</td>
+          </tr>
+          <tr>
+            <td class="sched-time">11:36&ndash;11:42</td>
+            <td class="sched-speaker">Yan Liu</td>
+            <td class="sched-topic">Triplet-Aware Sparse Higher-Order Attention for Natural Language Understanding</td>
+          </tr>
+          <tr>
+            <td class="sched-time">11:42&ndash;11:48</td>
+            <td class="sched-speaker">Kai Han</td>
+            <td class="sched-topic">Where Natural Language Ends in Agents: Executable Skill Composition with MetaSkill</td>
+          </tr>
+          <tr>
+            <td class="sched-time">11:48&ndash;11:54</td>
+            <td class="sched-speaker">Chaoyang Zhou</td>
+            <td class="sched-topic">Intra-Trajectory Consistency for Reward Modeling</td>
+          </tr>
+          <tr>
+            <td class="sched-time">11:54&ndash;12:00</td>
+            <td class="sched-speaker">Daniel Yoo</td>
+            <td class="sched-topic">The Assistant Persona Differs Across Languages in Activation Space</td>
+          </tr>
+          <tr>
+            <td class="sched-time">12:00&ndash;12:06</td>
+            <td class="sched-speaker">Benedict Tessler</td>
+            <td class="sched-topic">Model Hypnosis: Strong control of AI via additive subliminal effects</td>
+          </tr>
+          <tr class="sched-break">
+            <td class="sched-time">12:06&ndash;13:00</td>
+            <td class="sched-speaker">&mdash;</td>
+            <td class="sched-topic">Lunch Break</td>
+          </tr>
+          <tr>
+            <td class="sched-time">13:00&ndash;13:40</td>
+            <td class="sched-speaker">Roger Levy <span class="sched-tag">Online</span></td>
+            <td class="sched-topic">Linguistic structure, probability, and language processing in humans and large language models</td>
+          </tr>
+          <tr>
+            <td class="sched-time">13:40&ndash;14:10</td>
+            <td class="sched-speaker">Jey Han Lau</td>
+            <td class="sched-topic">How linguistic relationships shape representation</td>
+          </tr>
+          <tr>
+            <td class="sched-time">14:10&ndash;14:40</td>
+            <td class="sched-speaker">Tal Linzen</td>
+            <td class="sched-topic">Less Superhuman Language Models</td>
+          </tr>
+          <tr>
+            <td class="sched-time">14:40&ndash;15:10</td>
+            <td class="sched-speaker">Usman Naseem</td>
+            <td class="sched-topic">Mechanistic-Driven AI Safety and Alignment</td>
+          </tr>
+          <tr>
+            <td class="sched-time">15:10&ndash;15:40</td>
+            <td class="sched-speaker">Reza Haffari</td>
+            <td class="sched-topic">What Should an Instruction Make Explicit? Language and Planning in Foundation Models</td>
+          </tr>
+          <tr class="sched-break">
+            <td class="sched-time">15:40&ndash;16:00</td>
+            <td class="sched-speaker">&mdash;</td>
+            <td class="sched-topic">Break</td>
+          </tr>
+          <tr class="sched-break">
+            <td class="sched-time">16:00&ndash;17:00</td>
+            <td class="sched-speaker">&mdash;</td>
+            <td class="sched-topic">Poster Session &amp; Coffee Break</td>
+          </tr>
+          <tr>
+            <td class="sched-time">17:00&ndash;17:10</td>
+            <td class="sched-speaker">Organizers</td>
+            <td class="sched-topic">Closing Remarks</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sched-foot reveal reveal-d3">
+      The programme is subject to change &middot; a shareable version of this page lives at
+      <a href="invitations/">lp4fm.github.io/invitations</a>
+    </p>
   </div>
 </section>
 
@@ -1175,47 +1410,47 @@ footer::before {
 
     <div class="people-grid speakers-grid">
       <div class="speakers-row speakers-row-top">
-        <a href="https://www.mit.edu/~rplevy/" target="_blank" rel="noopener" class="person-card tilt reveal">
-          <div class="avatar avatar-1"><img src="assets/levy.jpg" alt="Roger Levy"></div>
+        <a href="https://research.monash.edu/en/persons/wray-buntine" target="_blank" rel="noopener" class="person-card tilt reveal">
+          <div class="avatar avatar-1"><img src="assets/buntine.jpg" alt="Wray Buntine"></div>
+          <div class="person-name">Wray Buntine</div>
+          <div class="person-affil">Monash University</div>
+        </a>
+        <a href="https://people.csiro.au/p/c/cecile-paris" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d1">
+          <div class="avatar avatar-2"><img src="assets/cecile.jpg" alt="Cecile Paris"></div>
+          <div class="person-name">Cécile Paris</div>
+          <div class="person-affil">CSIRO</div>
+        </a>
+        <a href="https://www.cs.cmu.edu/~hovy/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d2">
+          <div class="avatar avatar-3"><img src="assets/hovy.jpg" alt="Eduard Hovy"></div>
+          <div class="person-name">Eduard Hovy</div>
+          <div class="person-affil">Carnegie Mellon University</div>
+        </a>
+        <a href="https://www.mit.edu/~rplevy/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d3">
+          <div class="avatar avatar-4"><img src="assets/levy.jpg" alt="Roger Levy"></div>
           <div class="person-name">Roger Levy</div>
           <div class="person-affil">Massachusetts Institute of Technology</div>
         </a>
-        <a href="https://homepages.inf.ed.ac.uk/mlap/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d1">
-          <div class="avatar avatar-2"><img src="assets/lapata.jpeg" alt="Mirella Lapata"></div>
-          <div class="person-name">Mirella Lapata</div>
-          <div class="person-affil">University of Edinburgh</div>
-        </a>
-        <a href="https://rezahaffari.github.io/HomePage/HomePage.html" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d2">
-          <div class="avatar avatar-3"><img src="assets/haffari.jpg" alt="Gholamreza Haffari"></div>
-          <div class="person-name">Gholamreza Haffari</div>
-          <div class="person-affil">Monash University & OpenStream AI</div>
-        </a>
-        <a href="https://people.csiro.au/p/c/cecile-paris" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d3">
-          <div class="avatar avatar-8"><img src="assets/cecile.jpg" alt="Cecile Paris"></div>
-          <div class="person-name">Cecile Paris</div>
-          <div class="person-affil">CSIRO</div>
-        </a>
       </div>
       <div class="speakers-row speakers-row-bottom">
-        <a href="https://tallinzen.net/" target="_blank" rel="noopener" class="person-card tilt reveal">
-          <div class="avatar avatar-5"><img src="assets/linzen.png" alt="Tal Linzen"></div>
+        <a href="https://jeyhan.my/" target="_blank" rel="noopener" class="person-card tilt reveal">
+          <div class="avatar avatar-5"><img src="assets/lau.jpg" alt="Jey Han Lau"></div>
+          <div class="person-name">Jey Han Lau</div>
+          <div class="person-affil">University of Melbourne</div>
+        </a>
+        <a href="https://rezahaffari.github.io/HomePage/HomePage.html" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d1">
+          <div class="avatar avatar-6"><img src="assets/haffari.jpg" alt="Reza Haffari"></div>
+          <div class="person-name">Reza Haffari</div>
+          <div class="person-affil">Monash University & OpenStream AI</div>
+        </a>
+        <a href="https://tallinzen.net/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d2">
+          <div class="avatar avatar-7"><img src="assets/linzen.png" alt="Tal Linzen"></div>
           <div class="person-name">Tal Linzen</div>
           <div class="person-affil">New York University & Google Research</div>
         </a>
-        <a href="https://nouhadziri.github.io/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d1">
-          <div class="avatar avatar-6"><img src="assets/dziri.jpg" alt="Nouha Dziri"></div>
-          <div class="person-name">Nouha Dziri</div>
-          <div class="person-affil">Cohere Labs</div>
-        </a>
-        <a href="https://dadelani.github.io/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d2">
-          <div class="avatar avatar-7"><img src="assets/david-adelani.png" alt="David Ifeoluwa Adelani"></div>
-          <div class="person-name">David Ifeoluwa Adelani</div>
-          <div class="person-affil">McGill University & Mila</div>
-        </a>
-        <a href="https://jeyhan.my/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d3">
-          <div class="avatar avatar-4"><img src="assets/lau.jpg" alt="Jey Han Lau"></div>
-          <div class="person-name">Jey Han Lau</div>
-          <div class="person-affil">University of Melbourne</div>
+        <a href="https://usmaann.github.io/" target="_blank" rel="noopener" class="person-card tilt reveal reveal-d3">
+          <div class="avatar avatar-8"><img src="assets/naseem.jpg" alt="Usman Naseem"></div>
+          <div class="person-name">Usman Naseem</div>
+          <div class="person-affil">Macquarie University</div>
         </a>
       </div>
     </div>
