@@ -5,13 +5,12 @@
 <title>LP4FM Workshop — NeurIPS 2026</title>
 <link rel="canonical" href="https://lp4fm.github.io/">
 <script>
-  // GitHub Pages only deploys this repository at the organization site
-  // (https://lp4fm.github.io/). Any path below /LP4FM.github.io/ is not a real
-  // deployment, so map it back to the canonical location.
+  // GitHub Pages deploys this repository at the organization site
+  // (https://lp4fm.github.io/). Map any /LP4FM.github.io/... path back to the
+  // matching canonical path, and send everything else to the home page.
   (function () {
-    var path = window.location.pathname.replace(/^\/LP4FM\.github\.io/i, '');
-    var target = 'https://lp4fm.github.io' + (path || '/');
-    window.location.replace(target);
+    var m = window.location.pathname.match(/^\/LP4FM\.github\.io(\/.*)$/i);
+    window.location.replace(m ? 'https://lp4fm.github.io' + m[1] : 'https://lp4fm.github.io/');
   })();
 </script>
 <meta http-equiv="refresh" content="0; url=https://lp4fm.github.io/">
